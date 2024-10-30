@@ -9,10 +9,10 @@ def tiempo_para_huevo_a_la_copa(To):
     Tw = 100  # temperatura de ebullición del agua en °C
     Ty = 70  # temperatura máxima de la yema en °C
 
-    # Calcular el tiempo usando la fórmula
-    t = (M**(2/3) * c * rho**(1/3) * K * math.pi**2 * 
-         (4 * math.pi / 3)**(2/3) * 
-         math.log((0.76 * To - Tw) / (Ty - Tw)))
+    # Calcular el tiempo usando la fórmula corregida
+    t = ((M**(2/3) * c * rho**(1/3)) / 
+         (K * math.pi**2 * (4 * math.pi / 3)**(2/3))) * \
+        math.log(0.76 * (To - Tw) / (Ty - Tw))
 
     return t
 
